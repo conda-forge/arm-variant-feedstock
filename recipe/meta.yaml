@@ -44,7 +44,7 @@ outputs:
         - arm_{{ arm_variant_type }}  # [arm_variant_type != arm_variant_type_default]
       run_exports:
         strong_constrains:
-          arm-variant * {{ arm_variant_type }}
+          - arm-variant * {{ arm_variant_type }}
     test:
       commands:
         - exit 0
@@ -70,6 +70,7 @@ outputs:
 about:
   home: https://github.com/conda-forge/arm-variant-feedstock
   license: BSD-3-Clause
+  license_file: LICENSE.txt
   summary: 'Metapackages to select the ARM variants.'
 
 extra:
