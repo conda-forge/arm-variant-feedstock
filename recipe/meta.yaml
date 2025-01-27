@@ -42,6 +42,9 @@ outputs:
       string: "{{ arm_variant_type }}"
       track_features:
         - arm_{{ arm_variant_type }}  # [arm_variant_type != arm_variant_type_default]
+      run_exports:
+        strong_constrains:
+          arm-variant * {{ arm_variant_type }}
     test:
       commands:
         - exit 0
