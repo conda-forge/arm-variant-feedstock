@@ -30,9 +30,9 @@ Currently the main ones are:
   * SBSA ( Server Base System Architecture ), which is used in clusters, cloud environments, etc.
   * Tegra ( System on a Chip ), which is used in edge applications like mobile internet devices, streaming systems, etc.
 
-Mainly these differ as they have 2 different `cudatoolkit`s. This package is used to select between them.
+These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
 
-The default is SBSA. So Tegra users should make sure to change this if needed.
+The default is SBSA. Select a the tegra 'arm-variant' package by installing 'arm-variant=*=tegra'.
 
 
 About cuda-nvcc-arm-variant-target
@@ -52,9 +52,9 @@ Currently the main ones are:
   * SBSA ( Server Base System Architecture ), which is used in clusters, cloud environments, etc.
   * Tegra ( System on a Chip ), which is used in edge applications like mobile internet devices, streaming systems, etc.
 
-Mainly these differ as they have 2 different `cudatoolkit`s. This package is used to select between them.
+These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
 
-The default is SBSA. So Tegra users should make sure to change this if needed.
+The default is SBSA. Select a the tegra 'arm-variant' package by installing 'cuda-nvcc-arm-variant-target=*=tegra'.
 
 
 Current build status
