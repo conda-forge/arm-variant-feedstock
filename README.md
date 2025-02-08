@@ -1,28 +1,15 @@
-About arm-variant-metapackages-feedstock
-========================================
+About arm-variant-feedstock
+===========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/arm-variant-feedstock/blob/main/LICENSE.txt)
 
-
-About arm-variant-metapackages
-------------------------------
-
 Home: https://github.com/conda-forge/arm-variant-feedstock
 
 Package license: BSD-3-Clause
 
-Summary: Metapackages to select the ARM variants.
+Summary: A meta-package to select the ARM variant.
 
-About arm-variant
------------------
-
-Home: https://github.com/conda-forge/arm-variant-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: A meta-package to select the runtime ARM variant.
-
-Use this package to select which ARM variant to use at runtime. Use the 'cuda-nvcc-arm-variant-target' package in build requirements to select which ARM variant to compile for.
+Use this package to select which ARM variant to use at runtime or compile for.
 
 There are a couple of ARM variants that differ based on architecture.
 
@@ -33,28 +20,6 @@ Currently the main ones are:
 These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
 
 The default is SBSA. Select a the tegra 'arm-variant' package by installing 'arm-variant=*=tegra'.
-
-
-About cuda-nvcc-arm-variant-target
-----------------------------------
-
-Home: https://github.com/conda-forge/arm-variant-feedstock
-
-Package license: BSD-3-Clause
-
-Summary: A meta-package to select the ARM variant target for compilation.
-
-Use this package in build requirements to select which ARM variant to compile for. Use the 'arm-variant' package elsewhere.
-
-There are a couple of ARM variants that differ based on architecture.
-
-Currently the main ones are:
-  * SBSA ( Server Base System Architecture ), which is used in clusters, cloud environments, etc.
-  * Tegra ( System on a Chip ), which is used in edge applications like mobile internet devices, streaming systems, etc.
-
-These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
-
-The default is SBSA. Select a the tegra 'arm-variant' package by installing 'cuda-nvcc-arm-variant-target=*=tegra'.
 
 
 Current build status
@@ -76,28 +41,27 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-arm--variant-green.svg)](https://anaconda.org/conda-forge/arm-variant) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/arm-variant.svg)](https://anaconda.org/conda-forge/arm-variant) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/arm-variant.svg)](https://anaconda.org/conda-forge/arm-variant) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/arm-variant.svg)](https://anaconda.org/conda-forge/arm-variant) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--nvcc--arm--variant--target-green.svg)](https://anaconda.org/conda-forge/cuda-nvcc-arm-variant-target) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-nvcc-arm-variant-target.svg)](https://anaconda.org/conda-forge/cuda-nvcc-arm-variant-target) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-nvcc-arm-variant-target.svg)](https://anaconda.org/conda-forge/cuda-nvcc-arm-variant-target) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-nvcc-arm-variant-target.svg)](https://anaconda.org/conda-forge/cuda-nvcc-arm-variant-target) |
 
-Installing arm-variant-metapackages
-===================================
+Installing arm-variant
+======================
 
-Installing `arm-variant-metapackages` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `arm-variant` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `arm-variant, cuda-nvcc-arm-variant-target` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `arm-variant` can be installed with `conda`:
 
 ```
-conda install arm-variant cuda-nvcc-arm-variant-target
+conda install arm-variant
 ```
 
 or with `mamba`:
 
 ```
-mamba install arm-variant cuda-nvcc-arm-variant-target
+mamba install arm-variant
 ```
 
 It is possible to list all of the versions of `arm-variant` available on your platform with `conda`:
@@ -167,17 +131,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating arm-variant-metapackages-feedstock
-===========================================
+Updating arm-variant-feedstock
+==============================
 
-If you would like to improve the arm-variant-metapackages recipe or build a new
+If you would like to improve the arm-variant recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/arm-variant-metapackages-feedstock are
+Note that all branches in the conda-forge/arm-variant-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.

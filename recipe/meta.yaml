@@ -1,77 +1,39 @@
 package:
-  name: arm-variant-metapackages
+  name: arm-variant
   version: 1.2.0
 
 build:
   number: 0
   noarch: generic
+  string: "{{ arm_variant_type }}"
+  track_features:
+    - arm_{{ arm_variant_type }}  # [arm_variant_type != arm_variant_type_default]
+  run_exports:
+    strong_constrains:
+      - arm-variant * {{ arm_variant_type }}
 
-outputs:
-
-  - name: arm-variant
-    build:
-      noarch: generic
-      string: "{{ arm_variant_type }}"
-      track_features:
-        - arm_{{ arm_variant_type }}  # [arm_variant_type != arm_variant_type_default]
-    test:
-      commands:
-        - exit 0
-    about:
-      home: https://github.com/conda-forge/arm-variant-feedstock
-      license: BSD-3-Clause
-      license_family: BSD
-      license_file: LICENSE.txt
-      summary: 'A meta-package to select the runtime ARM variant.'
-      description: |
-        Use this package to select which ARM variant to use at runtime. Use the 'cuda-nvcc-arm-variant-target' package in build requirements to select which ARM variant to compile for.
-
-        There are a couple of ARM variants that differ based on architecture.
-
-        Currently the main ones are:
-          * SBSA ( Server Base System Architecture ), which is used in clusters, cloud environments, etc.
-          * Tegra ( System on a Chip ), which is used in edge applications like mobile internet devices, streaming systems, etc.
-
-        These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
-
-        The default is SBSA. Select a the tegra 'arm-variant' package by installing 'arm-variant=*=tegra'.
-
-  - name: cuda-nvcc-arm-variant-target
-    build:
-      noarch: generic
-      string: "{{ arm_variant_type }}"
-      track_features:
-        - arm_{{ arm_variant_type }}  # [arm_variant_type != arm_variant_type_default]
-      run_exports:
-        strong_constrains:
-          - arm-variant * {{ arm_variant_type }}
-    test:
-      commands:
-        - exit 0
-    about:
-      home: https://github.com/conda-forge/arm-variant-feedstock
-      license: BSD-3-Clause
-      license_family: BSD
-      license_file: LICENSE.txt
-      summary: 'A meta-package to select the ARM variant target for compilation.'
-      description: |
-        Use this package in build requirements to select which ARM variant to compile for. Use the 'arm-variant' package elsewhere.
-
-        There are a couple of ARM variants that differ based on architecture.
-
-        Currently the main ones are:
-          * SBSA ( Server Base System Architecture ), which is used in clusters, cloud environments, etc.
-          * Tegra ( System on a Chip ), which is used in edge applications like mobile internet devices, streaming systems, etc.
-
-        These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
-
-        The default is SBSA. Select a the tegra 'arm-variant' package by installing 'cuda-nvcc-arm-variant-target=*=tegra'.
+test:
+  commands:
+    - exit 0
 
 about:
   home: https://github.com/conda-forge/arm-variant-feedstock
   license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Metapackages to select the ARM variants.'
+  summary: 'A meta-package to select the ARM variant.'
+  description: |
+    Use this package to select which ARM variant to use at runtime or compile for.
+
+    There are a couple of ARM variants that differ based on architecture.
+
+    Currently the main ones are:
+      * SBSA ( Server Base System Architecture ), which is used in clusters, cloud environments, etc.
+      * Tegra ( System on a Chip ), which is used in edge applications like mobile internet devices, streaming systems, etc.
+
+    These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
+
+    The default is SBSA. Select a the tegra 'arm-variant' package by installing 'arm-variant=*=tegra'.
 
 extra:
   recipe-maintainers:
