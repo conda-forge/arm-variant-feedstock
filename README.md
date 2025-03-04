@@ -9,15 +9,17 @@ Package license: BSD-3-Clause
 
 Summary: A meta-package to select the ARM variant.
 
+Use this package to select which ARM variant to use at runtime or compile for.
+
 There are a couple of ARM variants that differ based on architecture.
 
 Currently the main ones are:
   * SBSA ( Server Base System Architecture ), which is used in clusters, cloud environments, etc.
   * Tegra ( System on a Chip ), which is used in edge applications like mobile internet devices, streaming systems, etc.
 
-Mainly these differ as they have 2 different `cudatoolkit`s. So this package is used to select between them.
+These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
 
-The default is SBSA. So Tegra users should make sure to change this if needed.
+The default is SBSA. Select a the tegra 'arm-variant' package by installing 'arm-variant=*=tegra'.
 
 
 Current build status
