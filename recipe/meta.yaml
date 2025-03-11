@@ -1,13 +1,16 @@
 package:
   name: arm-variant
-  version: 1.1.0
+  version: 1.2.0
 
 build:
-  number: 1
+  number: 0
   noarch: generic
   string: "{{ arm_variant_type }}"
   track_features:
     - arm_{{ arm_variant_type }}  # [arm_variant_type != arm_variant_type_default]
+  run_exports:
+    strong:
+      - arm-variant * {{ arm_variant_type }}
 
 test:
   commands:
