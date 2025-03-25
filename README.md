@@ -19,7 +19,7 @@ Currently the main ones are:
 
 These variants have different CUDA Toolkits, and the arm-variant package is used to select between them.
 
-The default is SBSA. Select a the tegra 'arm-variant' package by installing 'arm-variant=*=tegra'.
+The default is SBSA. Select the tegra 'arm-variant' package by installing 'arm-variant=*=tegra'.
 
 
 Current build status
